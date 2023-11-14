@@ -1,15 +1,14 @@
-
 import { generateGuid } from '../../core/helpers/generate-guid';
 import { Table, Button, Space, Popconfirm, message } from 'antd';
 import { DeletePost, usePosts } from './actions/table.mutation';
 import { Link } from 'react-router-dom';
 import CreateFormButton from '../../core/helpers/create-form-button';
-import { DeleteAllPosts } from './actions/table.mutation'; 
+import { DeleteAllPosts } from './actions/table.mutation';
 
 const TableComponent = () => {
   const { data, refetch } = usePosts();
   const deletePosts = DeletePost();
-  const deleteAllPosts = DeleteAllPosts(); 
+  const deleteAllPosts = DeleteAllPosts();
 
   const renderActions = (text: string, record: any) => (
     <Space size="middle">
@@ -45,7 +44,7 @@ const TableComponent = () => {
       message.error('Error deleting all posts');
     }
   };
-  
+
   const columns = [
     {
       title: 'id',
@@ -70,13 +69,20 @@ const TableComponent = () => {
 
   return (
     <>
-      <Table columns={columns} pagination={false} rowKey={generateGuid} dataSource={data} />
-      <Space>
-        <CreateFormButton />
-        <Button type="primary" onClick={handleDeleteAll}>
-          Delete All
-        </Button>
-      </Space>
+      <div style={{ maxWidth: '800px', margin: 'auto', marginTop: '20px' }}>
+        <Table
+          columns={columns}
+          pagination={false}
+          rowKey={generateGuid}
+          dataSource={data}
+        />
+        <Space>
+          <CreateFormButton />
+          <Button type="primary" onClick={handleDeleteAll}>
+            Delete All
+          </Button>
+        </Space>
+      </div>
     </>
   );
 };

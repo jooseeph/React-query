@@ -1,6 +1,6 @@
 
 import { useMutation, useQueryClient } from 'react-query';
-import { updatePost } from './detail.service';
+import { updatePost } from './update.service';
 
 export const useUpdatePost = () => {
   const queryClient = useQueryClient();

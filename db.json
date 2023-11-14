@@ -1,5 +1,11 @@
 {
-  "posts": [],
+  "posts": [
+    {
+      "title": "UDPDATE",
+      "body": "update",
+      "id": 1
+    }
+  ],
   "comments": [],
   "profile": {
     "name": "typicode"
