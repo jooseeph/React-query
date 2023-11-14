@@ -1,26 +1,5 @@
 {
-  "posts": [
-    {
-      "title": "sdssdsdsd",
-      "body": "APPLEDSDS",
-      "id": 8
-    },
-    {
-      "title": "sdssdsdsd",
-      "body": "sdsddssds",
-      "id": 9
-    },
-    {
-      "title": "sdssdsdsd",
-      "body": "sdsddssds",
-      "id": 10
-    },
-    {
-      "title": "YUSIFTEST",
-      "body": "TEST",
-      "id": 12
-    }
-  ],
+  "posts": [],
   "comments": [],
   "profile": {
     "name": "typicode"

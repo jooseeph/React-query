@@ -13,6 +13,12 @@ export const getPostsService = () => {
 export const deletePostService = (id: number) => {
   return axiosInstance.delete(API.posts + "/" + id);
 };
-export const deleteAllPostsService = () => {
-  return axiosInstance.delete('http://localhost:3000/posts');
+export const deleteAllPostsService = async () => {
+  const posts = await axiosInstance.get(API.posts);
+
+  const deletePromises = posts.data.map((post: { id: any; }) => {
+    return axiosInstance.delete(API.posts + "/" + post.id);
+  });
+
+  await Promise.all(deletePromises);
 };
