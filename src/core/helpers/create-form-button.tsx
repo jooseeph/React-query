@@ -1,6 +1,6 @@
-import { Button } from "antd";
-import { Routes } from "../../router/routes";
-import { useNavigate } from "react-router-dom";
+import { Button } from 'antd';
+import { Routes } from '../../router/routes';
+import { useNavigate } from 'react-router-dom';
 
 const CreateFormButton = () => {
   const navigate = useNavigate();
@@ -10,7 +10,7 @@ const CreateFormButton = () => {
   };
 
   return (
-    <Button type="primary" onClick={handleClick}>
+    <Button type='primary' onClick={handleClick}>
       Create Form
     </Button>
   );

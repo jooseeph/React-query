@@ -4,10 +4,13 @@ import {
   deletePostService,
   getPostsService,
 } from './table.service';
+import TableModel from '../models/table.model';
+
 
 export const usePosts = () => {
-  return useQuery<any, Error>('test', () => {
-    return getPostsService();
+  return useQuery<TableModel[], Error>('test', async () => {
+    const posts = await getPostsService();
+    return posts.map((item: any) => new TableModel(item));
   });
 };
 

@@ -1,12 +1,15 @@
-import { useCallback } from 'react';
+import { useCallback, useMemo } from 'react';
 import { IFormValues } from './form';
 import { Form, Input, Button, Space, message } from 'antd';
 import { useAddPost } from './actions/form.mutation';
 import { useNavigate } from 'react-router-dom';
+import useLocalization from '../../assets/lang';
 
 const FormComponent = () => {
   const addPost = useAddPost();
   const navigate = useNavigate();
+  const translate = useLocalization();
+
 
   const initialValues: IFormValues = {
     title: '',
@@ -29,6 +32,23 @@ const FormComponent = () => {
     navigate('/table');
   }, [navigate]);
 
+  const rules = useMemo(() => ({
+    title: [
+        {
+            required: true,
+            message: translate('input_required'),
+        }
+    ],
+    body: [
+        {
+            min: 8,
+            message: translate('input_min_length', {
+                min: <span style={{color: 'green',}}>8</span>,
+            }),
+        }
+    ],
+
+}), [translate]);
   return (
     <div style={{ maxWidth: '800px', margin: 'auto', marginTop: '20px' }}>
       <Space direction="vertical" style={{ width: '100%' }} size="middle">
@@ -41,14 +61,14 @@ const FormComponent = () => {
           <Form.Item
             name="title"
             label="Title"
-            rules={[{ required: true, message: 'Please input the title!' }]}
+            rules={rules.title}
           >
             <Input />
           </Form.Item>
           <Form.Item
             name="body"
             label="body"
-            rules={[{ required: true, message: 'Please input the body!' }]}
+            rules={rules.body}
           >
             <Input />
           </Form.Item>

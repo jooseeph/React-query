@@ -3,7 +3,7 @@ import { Routes } from "./routes";
 import NotfoundComponent from "../pages/not-found/notfound.component";
 import FormComponent from "../pages/form/form.component";
 import TableComponent from "../pages/table/table.component";
-import UpdateFormComponent from "../pages/detail/update.component";
+import UpdateFormComponent from "../pages/update/update.component";
 
 const router = createBrowserRouter([
   {

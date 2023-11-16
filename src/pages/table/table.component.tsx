@@ -12,7 +12,7 @@ const TableComponent = () => {
 
   const renderActions = (text: string, record: any) => (
     <Space size="middle">
-      <Link to={`/post/${record.id}`}>Update</Link>
+      <Link to={`/update/${record.id}`}>Update</Link>
       <Popconfirm
         title="Are you sure delete this post?"
         onConfirm={() => handleDelete(record.id)}
@@ -47,16 +47,16 @@ const TableComponent = () => {
 
   const columns = [
     {
-      title: 'id',
+      title: 'Id',
       dataIndex: 'id',
       width: '80px',
     },
     {
-      title: 'title',
+      title: 'Title',
       dataIndex: 'title',
     },
     {
-      title: 'body',
+      title: 'Body',
       dataIndex: 'body',
       ellipsis: true,
     },
@@ -66,7 +66,6 @@ const TableComponent = () => {
       render: renderActions,
     },
   ];
-
   return (
     <>
       <div style={{ maxWidth: '800px', margin: 'auto', marginTop: '20px' }}>
