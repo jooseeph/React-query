@@ -6,7 +6,7 @@ module.exports = {
     'plugin:react-hooks/recommended',
   ],
   parser: '@typescript-eslint/parser',
-  parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
+  parserOptions: { ecmaVersion: 2023, sourceType: 'module' },
   plugins: ['react-refresh'],
   rules: {
     'react-refresh/only-export-components': 'warn',
@@ -20,14 +20,11 @@ module.exports = {
     'no-eval': 'error',
     'no-unused-expressions': 'error',
     'no-var': 'error',
-    // 'no-unused-vars': 'error',
     '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
-    // turn off  @typescript-eslint/no-explicit-any
     '@typescript-eslint/no-explicit-any': 'warn',
     '@typescript-eslint/ban-ts-comment': 'warn',
     'prefer-const': 'warn',
     semi: 'error',
     'comma-spacing': 'error',
-    // 'comma-dangle': ['error',{"objects": "always"}],
   },
 };

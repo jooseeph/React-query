@@ -6,10 +6,9 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 const query = new QueryClient();
 
 const App = () => {
-
   return (
     <QueryClientProvider client={query}>
-      <div className="App">
+      <div className='App'>
         <RouterProvider router={router} />
       </div>
       <ReactQueryDevtools initialIsOpen={false} />

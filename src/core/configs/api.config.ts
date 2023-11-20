@@ -1,3 +1,3 @@
 export const API = {
-  posts: "posts",
+  posts: 'posts',
 };

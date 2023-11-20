@@ -6,7 +6,6 @@ import {
 } from './table.service';
 import TableModel from '../models/table.model';
 
-
 export const usePosts = () => {
   return useQuery<TableModel[], Error>('test', async () => {
     const posts = await getPostsService();

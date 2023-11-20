@@ -3,5 +3,5 @@ export enum Routes {
   form = '/form',
   table = '/table',
   update = '/update/:id',
-  details = '/details/:id'
+  details = '/details/:id',
 }

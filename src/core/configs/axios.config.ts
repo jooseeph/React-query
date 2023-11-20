@@ -1,6 +1,6 @@
-import axios, { AxiosResponse,  } from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import { environment } from './app.config';
-import {  successToast } from '../shared/toast/toast';
+import { successToast } from '../shared/toast/toast';
 import { getToken } from '../helpers/get-token';
 
 const axiosInstance = axios.create({

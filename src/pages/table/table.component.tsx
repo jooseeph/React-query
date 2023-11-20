@@ -11,15 +11,15 @@ const TableComponent = () => {
   const deleteAllPosts = DeleteAllPosts();
 
   const renderActions = (text: string, record: any) => (
-    <Space size="middle">
+    <Space size='middle'>
       <Link to={`/update/${record.id}`}>Update</Link>
       <Popconfirm
-        title="Are you sure delete this post?"
+        title='Are you sure delete this post?'
         onConfirm={() => handleDelete(record.id)}
-        okText="Yes"
-        cancelText="No"
+        okText='Yes'
+        cancelText='No'
       >
-        <Button type="link" danger>
+        <Button type='link' danger>
           Delete
         </Button>
       </Popconfirm>
@@ -77,7 +77,7 @@ const TableComponent = () => {
         />
         <Space>
           <CreateFormButton />
-          <Button type="primary" onClick={handleDeleteAll}>
+          <Button type='primary' onClick={handleDeleteAll}>
             Delete All
           </Button>
         </Space>

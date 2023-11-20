@@ -26,22 +26,22 @@ const UpdateFormComponent = () => {
 
   return (
     <div style={{ maxWidth: '800px', margin: 'auto', marginTop: '20px' }}>
-      <Form name="basic" layout="vertical" onFinish={onSubmit}>
+      <Form name='basic' layout='vertical' onFinish={onSubmit}>
         <Form.Item
-          name="title"
-          label="Title"
+          name='title'
+          label='Title'
           rules={[{ required: true, message: 'Please input the title!' }]}
         >
           <Input />
         </Form.Item>
         <Form.Item
-          name="body"
-          label="Body"
+          name='body'
+          label='Body'
           rules={[{ required: true, message: 'Please input the body!' }]}
         >
           <Input />
         </Form.Item>
-        <Button type="primary" htmlType="submit">
+        <Button type='primary' htmlType='submit'>
           Update
         </Button>
       </Form>

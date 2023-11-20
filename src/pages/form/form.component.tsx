@@ -10,7 +10,6 @@ const FormComponent = () => {
   const navigate = useNavigate();
   const translate = useLocalization();
 
-
   const initialValues: IFormValues = {
     title: '',
     body: '',
@@ -32,47 +31,41 @@ const FormComponent = () => {
     navigate('/table');
   }, [navigate]);
 
-  const rules = useMemo(() => ({
-    title: [
+  const rules = useMemo(
+    () => ({
+      title: [
         {
-            required: true,
-            message: translate('input_required'),
-        }
-    ],
-    body: [
+          required: true,
+          message: translate('input_required'),
+        },
+      ],
+      body: [
         {
-            min: 8,
-            message: translate('input_min_length', {
-                min: <span style={{color: 'green',}}>8</span>,
-            }),
-        }
-    ],
-
-}), [translate]);
+          min: 8,
+          message: translate('input_min_length', {
+            min: <span style={{ color: 'green' }}>8</span>,
+          }),
+        },
+      ],
+    }),
+    [translate]
+  );
   return (
     <div style={{ maxWidth: '800px', margin: 'auto', marginTop: '20px' }}>
-      <Space direction="vertical" style={{ width: '100%' }} size="middle">
+      <Space direction='vertical' style={{ width: '100%' }} size='middle'>
         <Form
           initialValues={initialValues}
-          name="basic"
-          layout="vertical"
+          name='basic'
+          layout='vertical'
           onFinish={onSubmit}
         >
-          <Form.Item
-            name="title"
-            label="Title"
-            rules={rules.title}
-          >
+          <Form.Item name='title' label='Title' rules={rules.title}>
             <Input />
           </Form.Item>
-          <Form.Item
-            name="body"
-            label="body"
-            rules={rules.body}
-          >
+          <Form.Item name='body' label='body' rules={rules.body}>
             <Input />
           </Form.Item>
-          <Button type="primary" htmlType="submit">
+          <Button type='primary' htmlType='submit'>
             Submit
           </Button>
         </Form>
