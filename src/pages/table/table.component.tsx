@@ -2,7 +2,7 @@ import { generateGuid } from '../../core/helpers/generate-guid';
 import { Table, Button, Space, Popconfirm, message } from 'antd';
 import { DeletePost, usePosts } from './actions/table.mutation';
 import { Link } from 'react-router-dom';
-import CreateFormButton from '../../core/helpers/create-form-button';
+import CreateFormButton from '../../core/shared/create-form-button/create-form-button';
 import { DeleteAllPosts } from './actions/table.mutation';
 
 const TableComponent = () => {

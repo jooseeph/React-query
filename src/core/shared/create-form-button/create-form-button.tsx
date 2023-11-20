@@ -1,5 +1,5 @@
 import { Button } from 'antd';
-import { Routes } from '../../router/routes';
+import { Routes } from '../../../router/routes';
 import { useNavigate } from 'react-router-dom';
 
 const CreateFormButton = () => {
