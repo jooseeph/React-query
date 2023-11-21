@@ -2,8 +2,9 @@ import { useCallback, useMemo } from 'react';
 import { IFormValues } from './form';
 import { Form, Input, Button, Space, message } from 'antd';
 import { useAddPost } from './actions/form.mutation';
-import { useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import useLocalization from '../../assets/lang';
+import { Routes } from '../../router/routes';
 
 const FormComponent = () => {
   const addPost = useAddPost();
@@ -22,13 +23,13 @@ const FormComponent = () => {
       }
 
       await addPost.mutateAsync(values);
-      navigate('/table');
+      navigate(Routes.table);
     },
     [addPost, navigate]
   );
 
   const onDirectToTable = useCallback(() => {
-    navigate('/table');
+    navigate(Routes.table);
   }, [navigate]);
 
   const rules = useMemo(

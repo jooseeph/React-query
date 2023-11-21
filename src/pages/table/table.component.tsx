@@ -1,16 +1,17 @@
 import { generateGuid } from '../../core/helpers/generate-guid';
 import { Table, Button, Space, Popconfirm, message } from 'antd';
-import { DeletePost, usePosts } from './actions/table.mutation';
+import { useDeletePost } from './actions/table.mutation';
 import { Link } from 'react-router-dom';
 import CreateFormButton from '../../core/shared/create-form-button/create-form-button';
-import { DeleteAllPosts } from './actions/table.mutation';
+import { useDeleteAllPosts } from './actions/table.mutation';
+import { usePosts } from './actions/table.query';
 
 const TableComponent = () => {
   const { data, refetch } = usePosts();
-  const deletePosts = DeletePost();
-  const deleteAllPosts = DeleteAllPosts();
+  const deletePosts = useDeletePost();
+  const deleteAllPosts = useDeleteAllPosts();
 
-  const renderActions = (text: string, record: any) => (
+  const renderActions = (_: string, record: any) => (
     <Space size='middle'>
       <Link to={`/update/${record.id}`}>Update</Link>
       <Popconfirm

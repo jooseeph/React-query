@@ -9,7 +9,7 @@ export const useAddPost = () => {
       return addPost(post);
     },
     onSuccess: () => {
-      queryClient.invalidateQueries('test');
+      queryClient.invalidateQueries('posts');
     },
   });
 };

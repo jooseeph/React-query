@@ -1,38 +1,26 @@
-import { useQuery, useQueryClient, useMutation } from 'react-query';
-import {
-  deleteAllPostsService,
-  deletePostService,
-  getPostsService,
-} from './table.service';
-import TableModel from '../models/table.model';
+import { useQueryClient, useMutation } from 'react-query';
+import { deleteAllPostsService, deletePostService } from './table.service';
 
-export const usePosts = () => {
-  return useQuery<TableModel[], Error>('test', async () => {
-    const posts = await getPostsService();
-    return posts.map((item: any) => new TableModel(item));
-  });
-};
-
-export const DeletePost = () => {
+export const useDeletePost = () => {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: (id: number) => {
       return deletePostService(id);
     },
     onSuccess: () => {
-      queryClient.invalidateQueries('test');
+      queryClient.invalidateQueries('posts');
     },
   });
 };
 
-export const DeleteAllPosts = () => {
+export const useDeleteAllPosts = () => {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: () => {
       return deleteAllPostsService();
     },
     onSuccess: () => {
-      queryClient.invalidateQueries('test');
+      queryClient.invalidateQueries('posts');
     },
   });
 };
